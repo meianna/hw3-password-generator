@@ -16,12 +16,25 @@ function writePassword() {
   if (setLength < 8 || setLength > 128) {
     prompt("Please choose a number between 8 and 128.");
   }
-
   var setLowercase = confirm("Do you want your password to contain lowercase letters?");
   var setUppercase = confirm("Do you want your password to contain uppercase letters?");
-  var setNumbers = confirm("Do you want your password to contain numbers?")
+  var setNumbers = confirm("Do you want your password to contain numbers?");
   var setSpecialChars = confirm("Do you want your password to contain special charcters?");
+  var passwordContent = "";
+  var passwordLength = document.getElementById("#password").value;
 
+  if (setLowercase === true) {
+    passwordContent += lowerCase;
+  }
+  if (setUppercase === true) {
+    passwordContent += upperCase;
+  }
+  if (setNumbers === true) {
+    passwordContent += numbers;
+  }
+  if (setSpecialChars === true) {
+    passwordContent += specialChars;
+  }
   if (
     setLowercase === false &&
     setUppercase === false &&
@@ -29,7 +42,7 @@ function writePassword() {
     setSpecialChars === false
   ) {
     alert("You must select at least one password criterion.")
-  }
+  };
 
 
 
