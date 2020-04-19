@@ -12,7 +12,6 @@ generateBtn.addEventListener("click", function writePassword() {
   // var password = generatePassword();
   var passwordText = document.querySelector("#password");
   var passwordContent = "";
-  var passwordGenerated = "";
 
   var setLength = prompt("Set the length of your password between 8 and 128 characters.");
   if (setLength < 8 || setLength > 128) {
@@ -22,7 +21,6 @@ generateBtn.addEventListener("click", function writePassword() {
   var setUppercase = confirm("Do you want your password to contain uppercase letters?");
   var setNumbers = confirm("Do you want your password to contain numbers?");
   var setSpecialChars = confirm("Do you want your password to contain special charcters?");
-
   if (
     setLowercase === false &&
     setUppercase === false &&
@@ -45,29 +43,14 @@ generateBtn.addEventListener("click", function writePassword() {
   };
 
   for (i = 0; i < setLength; i++) {
-    passwordGenerated += passwordContent.charAt(
-      Math.floor(Math.random() * passwordContent.length)
-    )
-
-    return passwordGenerated;
-
-
-    // var randomChar = Math.floor(Math.random() * passwordContent.length);
-    // password += passwordContent[randomChar];
+    var randomChar = Math.floor(Math.random() * passwordContent.length);
+    passwordGenerated += passwordContent.charAt(char);
   }
 
 
-  passwordText.value = password;
+  passwordText.value = passwordGenerated;
 
-
-
-
-
-
-
-
-
-});
+})
 
 
 
