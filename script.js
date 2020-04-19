@@ -6,10 +6,6 @@ var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numbers = "0123456789";
 var specialChars = "~`!@#$%^&*()_-+=?";
 
-// var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-// var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-// var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-// var specialChars = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "+", "=", "<", ">", "?", "`", "~", ""];
 // Write password to the #password input
 generateBtn.addEventListener("click", function writePassword() {
 
@@ -18,7 +14,7 @@ generateBtn.addEventListener("click", function writePassword() {
   var passwordContent = [];
   var passwordGenerated = "";
   var setLength = prompt("Set the length of your password between 8 and 128 characters.");
-  passwordText.value = passwordGenerated;
+
   if (setLength < 8 || setLength > 128) {
     //  alert ("Please choose a number between 8 and 128.");
     passwordText.value = "Please choose a number between 8 and 128.";
@@ -28,6 +24,7 @@ generateBtn.addEventListener("click", function writePassword() {
     var setUppercase = confirm("Do you want your password to contain uppercase letters?");
     var setNumbers = confirm("Do you want your password to contain numbers?");
     var setSpecialChars = confirm("Do you want your password to contain special charcters?");
+    passwordText.value = passwordGenerated;
     if (
       setLowercase === false &&
       setUppercase === false &&
